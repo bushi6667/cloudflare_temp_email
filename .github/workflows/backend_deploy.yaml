@@ -30,6 +30,9 @@ jobs:
           version: 10
           run_install: false
 
+      - name: Approve pnpm builds
+        run: echo "core-js-pure\nesbuild\nworkers" | pnpm approve-builds
+
       - name: Deploy Backend for ${{ github.ref_name }}
         run: |
           export use_worker_assets=${{ secrets.USE_WORKER_ASSETS }}
