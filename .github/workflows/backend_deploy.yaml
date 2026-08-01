@@ -31,7 +31,7 @@ jobs:
           run_install: false
 
       - name: Configure pnpm for CI
-        run: node -e "const p=require('./package.json');p.pnpm={onlyBuiltDependencies:['core-js-pure','esbuild','workers']};require('fs').writeFileSync('package.json',JSON.stringify(p,null,2))"
+        run: node -e "const p=require('./package.json');p.pnpm={onlyBuiltDependencies:['core-js-pure','esbuild','workers','workerd']};require('fs').writeFileSync('package.json',JSON.stringify(p,null,2))"
         working-directory: worker
 
       - name: Deploy Backend for ${{ github.ref_name }}
